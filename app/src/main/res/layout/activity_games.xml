@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_primary"
+    tools:context=".activity.GamesActivity">
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_surface"
+        android:paddingStart="24dp"
+        android:paddingTop="52dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="16dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MY GAMES"
+                android:textSize="11sp"
+                android:textColor="@color/accent_primary"
+                android:letterSpacing="0.18"
+                android:textStyle="bold"
+                android:layout_marginBottom="2dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game Library"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btnManageGames"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="+ Manage"
+            android:textSize="12sp"
+            android:textColor="@color/accent_primary"
+            style="@style/Widget.GameBooster.Button.Outlined"
+            app:cornerRadius="20dp" />
+
+    </LinearLayout>
+
+    <!-- SEARCH BAR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="14dp"
+        android:paddingBottom="10dp"
+        android:background="@color/bg_primary">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:queryHint="Search games..."
+            android:iconifiedByDefault="false"
+            android:background="#131824"
+            app:queryBackground="@color/bg_card"
+            app:searchHintIcon="@null"
+            app:closeIcon="@null" />
+
+    </LinearLayout>
+
+    <!-- LIST LABEL -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INSTALLED GAMES"
+        style="@style/TextAppearance.GameBooster.SectionHeading"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="8dp" />
+
+    <!-- RECYCLER VIEW -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGames"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="16dp" />
+
+</LinearLayout>
